@@ -221,11 +221,6 @@ if (process.env.CF_AI_GATEWAY_MODEL) {
             api: api,
             models: [{ id: modelId, name: modelId, contextWindow: 131072, maxTokens: 8192 }],
         };
-//// 20260308 trying to disable stream
-                if (gwProvider === 'workers-ai') {
-            config.models.providers[providerName].params = { streaming: false };
-        }
-        ///
         
         config.agents = config.agents || {};
         config.agents.defaults = config.agents.defaults || {};
